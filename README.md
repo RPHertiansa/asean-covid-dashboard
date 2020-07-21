@@ -1,15 +1,17 @@
 # covid-dashboard
 A Covid-19 Dashboard created using Vanilla JS (Unofficial)
 
-This dashboard displays a Covid-19 Dashboard for the following countries:
+This dashboard displays a Covid-19 Dashboard for the ASEAN countries:
 
-  - India
-  - Australia
-  - UK
-  - USA 
-  - Italy
-  - France
-  - Spain
+  -Indonesia
+  -Brunei Darussalam
+  -Cambodia
+  -Malaysia
+  -Myanmar
+  -Thailand
+  -Philippines
+  -Singapore
+  -Vietnam
   
 This API uses [Covid19API](https://covid19api.com/) - A Free API for data on the Coronavirus.
 
