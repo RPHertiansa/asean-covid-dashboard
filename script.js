@@ -67,20 +67,20 @@ let UIController = (() => {
     let getChartColors = (status, type) => {
         if (type === 'background') {
             if (status === 'confirmed') {
-                return ['rgba(255, 99, 132, 0.2)']
+                return ['rgba(255, 239, 0, 0.5)']
             } else if (status === 'recovered') {
-                return ['rgba(91, 184, 52, 0.2)']
+                return ['rgba(0,255,127, 0.5)']
             } else if (status === 'deaths') {
-                return ['rgba(118, 128, 144, 0.2)']
+                return ['rgba(255, 8, 0, 0.5)']
             }
         }
         if (type === 'border') {
             if (status === 'confirmed') {
-                return ['rgba(255, 99, 132, 0.2)']
+                return ['rgba(255, 239, 0, 0.5)']
             } else if (status === 'recovered') {
-                return ['rgba(91, 184, 52, 0.2)']
+                return ['rgba(0,255,127, 0.5)']
             } else if (status === 'deaths') {
-                return ['rgba(118, 128, 144, 0.2)']
+                return ['rgba(255, 8, 0, 0.5)']
             }
         }
     }
@@ -126,7 +126,14 @@ let UIController = (() => {
                         ticks: {
                             beginAtZero: false,
                             stepSize: 10000,
-                        }
+                            fontColor: '#ddd'
+                        } ,
+                        gridLines: { color: '#dddddd' }
+                    }],
+                    xAxes: [{
+                        gridLines: { color: '#dddddd' },
+                        ticks: {fontColor: '#ddd'}
+                        
                     }]
                 }
             }
@@ -135,25 +142,25 @@ let UIController = (() => {
 
     let getCountryFlag = (country) => {
         switch (country) {
-            case 'indonesia':
+            case 'Indonesia':
                 return 'ID';
-            case 'brunei':
+            case 'Brunei Darussalam':
                 return 'BN';
-            case 'cambodia':
+            case 'Cambodia':
                 return 'KH';
-            case 'laos':
+            case 'Lao PDR':
                 return 'LA';
-            case 'malaysia':
+            case 'Malaysia':
                 return 'MY';
-            case 'myanmar':
+            case 'Myanmar':
                 return 'MM';
-            case 'philippines':
+            case 'Philippines':
                 return 'PH';
-            case 'singapore':
+            case 'Singapore':
                 return 'SG';
-            case 'thailand':
+            case 'Thailand':
                 return 'TH';
-            case 'vietnam':
+            case 'Vietnam':
                 return 'VN';
             default:
                 return 'ID';
@@ -199,14 +206,10 @@ let UIController = (() => {
                 if (status === 'confirmed') {
                     document.querySelector(HTMLStrings.confirmedLabel).innerText = "Total Confirmed in last " + delta
                         + " days";
-                }
-
-                if (status === 'recovered') {
+                } else if (status === 'recovered') {
                     document.querySelector(HTMLStrings.confirmedLabel).innerText = "Total Recovered in last " + delta
                         + " days";
-                }
-
-                if (status === 'deaths') {
+                } else if (status === 'deaths') {
                     document.querySelector(HTMLStrings.confirmedLabel).innerText = "Total Deaths in last " + delta
                         + " days";
                 }
@@ -265,13 +268,3 @@ let UIController = (() => {
     init();
 
 })(UIController);
-
-
-
-    
-
-    
-
-
-
-

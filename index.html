@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html></html>
     <head>
         <!-- source tutorial -->
         <!-- https://medium.com/swlh/create-a-covid-19-dashboard-with-javascript-373f46a11fcc -->
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <!-- <link rel="stylesheet" href="style.css"> -->
+        <link rel="icon" href="image/favicon1.png" type="image/x-icon"/>
+        <link rel="shortcut icon" href="image/favicon1.png" type="image/x-icon"/>
+
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -17,13 +21,14 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
         
+        
 
         <title>ASEAN Covid-19 Dashboard</title>
 
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg text-white navbar-light bg-secondary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">ASEAN Covid-19 Dashboard</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,18 +40,19 @@
                         <label for="countries">Select Country</label>
             
                         <select name="countries" id="countries">
-                            <option value="indonesia">Indonesia</option>
-                            <option value="brunei">Brunei Darussalam</option>
-                            <option value="cambodia">Cambodia</option>
-                            <option value="laos">Lao PDR</option>
-                            <option value="malaysia">Malaysia</option>
-                            <option value="myanmar">Myanmar</option>
-                            <option value="philippines">Philippines</option>
-                            <option value="singapore">Singapore</option>
-                            <option value="thailand">Thailand</option>
-                            <option value="vietnam">Vietnam</option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="Brunei Darussalam">Brunei Darussalam</option>
+                            <option value="Cambodia">Cambodia</option>
+                            <option value="Lao PDR">Lao PDR</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Myanmar">Myanmar</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="Vietnam">Vietnam</option>
                         </select>                          
                     </div>
+                    
               
                     </ul>
                 </div>
@@ -63,24 +69,26 @@
                             <div class="country-div">
                                 <img src="https://www.countryflags.io/ID/flat/32.png"> <span class="country-name">Indonesia</span>
                             </div>
-                            <div class="active-cases card mt-3">
-                                <div class="card-header active-view" role="tab" id="headingTwo">
+                            <div class="active-cases card mt-3" style="margin-bottom: 15px;">
+                                <div class="card-header bg-secondary active-view" role="tab" id="headingTwo">
                                     <h5 class="mb-0">
-                                        <a id="active-card" class="collapsed card-title color-white" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <button  id="active-card" class="btn text-white btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="" aria-expanded="false" aria-controls="">
+                                        
                                             Active
-                                        </a>
-                                        <span id="active-count" class="case-count float-right">
+                                        
+                                            <span id="active-count" class="case-count float-right">
                                                 -
                                             </span>
+                                        </button>
                                     </h5>
                                 </div>
                             </div>
             
                             <div id="accordion" role="tablist" class="case-summary-container">
                                 <div class="card">
-                                    <div class="card-header confirmed-view" role="tab" id="headingOne">
+                                    <div class="card-header confirmed-view bg-secondary " role="tab" id="headingOne">
                                         <h5 class="mb-0">
-                                            <button  id="confirmed-card" class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#container-confirmed" aria-expanded="false" aria-controls="Confirmed">
+                                            <button  id="confirmed-card" class="btn btn-block  text-white text-left collapsed" type="button" data-toggle="collapse" data-target="#container-confirmed" aria-expanded="false" aria-controls="Confirmed">
                                                 Confirmed
                                                 <span id="confirmed-count" class="case-count float-right">
                                                     -
@@ -111,7 +119,7 @@
                                                         <div class="label-total-cases label-total-confirmed">
                                                             Total Confirmed in last 30 days
                                                         </div>
-                                                        <div id="range-confirmed-count" class="range-total-cases color-confirmed">
+                                                        <div id="range-confirmed-count" class="range-total-cases color-confirmed" >
                                                             -
                                                         </div>
                                                     </div>
@@ -122,9 +130,9 @@
                                 </div>
             
                                 <div class="card mt-3">
-                                    <div class="card-header recovered-view" role="tab" id="headingThree">
+                                    <div class="card-header recovered-view bg-secondary " role="tab" id="headingThree">
                                         <h5 class="mb-0">
-                                            <button  id="recovered-card" class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#container-recover" aria-expanded="false" aria-controls="recovered">
+                                            <button  id="recovered-card" class="btn btn-block text-left text-white collapsed" type="button" data-toggle="collapse" data-target="#container-recover" aria-expanded="false" aria-controls="recovered">
                                                 Recovered
                                                 <span  id="recovered-count" class="case-count float-right">
                                                     -
@@ -166,9 +174,9 @@
                                 </div>
             
                                 <div class="card mt-3">
-                                    <div class="card-header death-view" role="tab" id="headingFour">
+                                    <div class="card-header death-view bg-secondary " role="tab" id="headingFour">
                                         <h5 class="mb-0">
-                                            <button  id="death-card" class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#container-death" aria-expanded="false" aria-controls="deaths">
+                                            <button  id="death-card" class="btn btn-block text-left text-white collapsed" type="button" data-toggle="collapse" data-target="#container-death" aria-expanded="false" aria-controls="deaths">
                                                 Deaths
                                                 <span id="death-count" class="case-count float-right">
                                                     -
@@ -183,7 +191,7 @@
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class="col-lg-7">
-                                                        <canvas class="line-chart" id="death-case-chart" width="600" height="400"></canvas>
+                                                        <canvas class="line-chart" id="death-case-chart" width="600" height="400" style="color: white;"></canvas>
                                                     </div>
                                                     <div class="col-lg-5">
                                                         <div>
@@ -259,6 +267,7 @@
 
         
     <script src="script.js"></script>
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
