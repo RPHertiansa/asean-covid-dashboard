@@ -9,7 +9,7 @@
         <link rel="shortcut icon" href="image/favicon1.png" type="image/x-icon"/>
 
         <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -20,9 +20,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-        
-        
-
         <title>ASEAN Covid-19 Dashboard</title>
 
     </head>
@@ -30,13 +27,13 @@
         <header>
             <nav class="navbar navbar-expand-lg text-white navbar-light bg-secondary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">ASEAN Covid-19 Dashboard</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="#" style="color: white; font-weight: bold;">ASEAN Covid-19 Dashboard</a>
+                <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                      <div class="country-select" style="margin-top: 10px;">
+                    <div class="country-select" style="text-align: center; margin-top: 10px; margin-left: 50px;">
                         <label for="countries">Select Country</label>
             
                         <select name="countries" id="countries">
@@ -52,6 +49,10 @@
                             <option value="Vietnam">Vietnam</option>
                         </select>                          
                     </div>
+
+                    <button type="button" class="btn btn-secondary" style="background-color: darkgrey;" data-toggle="modal" data-target="#about">
+                        About
+                    </button>
                     
               
                     </ul>
@@ -63,7 +64,7 @@
         <main style="margin-top: 50px;">
             <div class="container-fluid" >
             <div class="row mx-auto">
-                <div class="col-sm-8 left-container">
+                <div class="col-sm-8 left-container" style="margin-bottom: 20px;">
                     
                         <div class="details-container card-header">
                             <div class="country-div">
@@ -119,7 +120,7 @@
                                                         <div class="label-total-cases label-total-confirmed">
                                                             Total Confirmed in last 30 days
                                                         </div>
-                                                        <div id="range-confirmed-count" class="range-total-cases color-confirmed" >
+                                                        <div id="range-confirmed-count" class="range-total-cases color-confirmed" style="color: rgb(255, 239, 0);">
                                                             -
                                                         </div>
                                                     </div>
@@ -163,7 +164,7 @@
                                                         <div class="label-total-cases label-total-recovered">
                                                             Total Recovered in last 30 days
                                                         </div>
-                                                        <div id="range-recovered-count" class="range-total-cases color-recovered">
+                                                        <div id="range-recovered-count" class="range-total-cases color-recovered" style="color: rgb(0,255,127);">
                                                             -
                                                         </div>
                                                     </div>
@@ -209,7 +210,7 @@
                                                             <div class="label-total-cases label-total-deaths">
                                                                 Total Deaths in last 30 days
                                                             </div>
-                                                            <div id="range-death-count" class="range-total-cases color-death">
+                                                            <div id="range-death-count" class="range-total-cases color-death" style="color: rgb(255, 8, 0)">
                                                                 -
                                                             </div>
                                                         </div>
@@ -223,6 +224,7 @@
                     
                 </div>
                 
+                
                 <div class="col-sm-4">
                     
                     <div class="resources-container">
@@ -232,11 +234,11 @@
                         <div class="card resource-card">
         
                             <div class="card-body">
-                                <h4 class="card-title">Advice for the Public</h4>
+                                <h4 class="card-title" style="font-weight: bold;">Advice for the Public</h4>
                                 <p class="card-text">
                                     Coronavirus disease (COVID-19) advice for the public from the World Health Organisation.
                                 </p>
-                                <a target="_blank" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public" class="btn btn-primary">View</a>
+                                <a target="_blank" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public" class="btn bg-secondary btn-primary" style="border: none;">View</a>
                             </div>
                         </div>
         
@@ -244,11 +246,11 @@
                         <div class="card resource-card">
         
                             <div class="card-body">
-                                <h4 class="card-title">Q&A on Coronavirus Pandemic (COVID-19)</h4>
+                                <h4 class="card-title" style="font-weight: bold;">Q&A on Coronavirus Pandemic (COVID-19)</h4>
                                 <p class="card-text">
                                     Your questions on the Coronavirus, answered by the World Health Organisation.
                                 </p>
-                                <a target="_blank" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/q-a-coronaviruses#:~:text=protect" class="btn btn-primary">View</a>
+                                <a target="_blank" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/q-a-coronaviruses#:~:text=protect" class="btn bg-secondary btn-primary" style="border: none;">View</a>
                             </div>
                         </div>
                     </div>
@@ -256,6 +258,30 @@
                 </div>
                 </div>
                     
+            </div>
+
+            <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content bg-secondary">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModal3Label">About this dashboard</h5>
+                            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Resources used in this project:
+                            <ul>
+                                <li><a class="modal-link" href="https://covid19api.com/" style="color: white;">Covid19API - A free API for data on the Coronavirus.</a></li>
+                                <li><a class="modal-link" href="https://www.who.int/" style="color: white;">WHO - Resources on Coronavirus.</a></li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <small>Disclaimer:<br> This is a modified version from Varun Joshi's <a style="color: white;" href="https://joshvarun.github.io/covid-dashboard/">Covid Dashboard</a> <br>The developers do not verify & are not responsible for the data displayed on this dashboard. Please visit <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" style="color: white" class="modal-link">WHO</a> for accurate information.</small>
+                           
+                        </div>
+                    </div>
+                </div>
             </div>
             
 

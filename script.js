@@ -135,7 +135,8 @@ let UIController = (() => {
                         ticks: {fontColor: '#ddd'}
                         
                     }]
-                }
+                },
+                legend: { display: false}
             }
         });
     }

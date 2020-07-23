@@ -1,15 +1,31 @@
 body { 
-    background: url(image/bg1.jpg) no-repeat center center fixed;  /*background image*/
+    background: url(image/bg.jpg) no-repeat center center fixed;  /*background image*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, sans-serif !important;
     color: white !important;
 }
 
-.range-total-cases {
+.card-header, .btn{
+    font-weight: bold !important;
+}
+
+.card-header {
+    background-color: darkgrey !important;
+    
+}
+.text-center {
+    font-weight: normal;
+} 
+
+.label-total-cases{
     margin-top: 50px;
+    text-align: center;
+    font-weight: normal;
+}
+.range-total-cases {
     text-align: center;
     font-size: 50px;
     color: inherit;
@@ -28,3 +44,4 @@ select{
     color: white;
     background-color: black;
 }
+
